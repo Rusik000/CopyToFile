@@ -1,0 +1,47 @@
+﻿<Window x:Class="CopyFile.MVVM.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:CopyFile.MVVM.Views"
+        mc:Ignorable="d" 
+        Title="CopyFile" 
+        Height="200" 
+        Width="640"
+        Background="Bisque"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="OpenFile" ToolTip="Open File" Width="50" Foreground="Black" Background="Yellow" FontSize="20" Margin="5 10 0 10 ">
+                <Button.Content>
+                    <materialDesign:PackIcon Kind="FileMove" Width="20" Height="20"/>
+                </Button.Content>
+            </Button>
+            <TextBox x:Name="FilePath" ToolTip="File Path" materialDesign:HintAssist.Hint="Enter file Path" materialDesign:HintAssist.Foreground="White" Foreground="Black" Background="White" Width="550" Height="30" FontSize="15" Margin="10 10"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <PasswordBox x:Name="EDKey" ToolTip="Encryption/Decryption key" materialDesign:HintAssist.Hint="Enter key" Foreground="White" Background="Chocolate" Width="240" Height="30" FontSize="15"  Margin="10 0 0 0"/>
+            <StackPanel Orientation="Horizontal" Margin="170 0 0 0">
+                <RadioButton x:Name="Encrypt" Content="Encrypt" Background="Black" IsChecked="True" Height="20" FontSize="15" Padding="0 -3 0 0"/>
+                <RadioButton x:Name="Decrypt" Content="Decrypt" Background="Black" Height="20" FontSize="15" Padding="0 -3 0 0" Margin="50 0 0 0"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ProgressBar x:Name="State" Background="White" Foreground="ForestGreen" Height="15" Width="610" Margin="5 0 0 0" Maximum="100"/>
+        </StackPanel>
+        <Canvas>
+
+
+            <Button Canvas.Left="150" x:Name="Start" ToolTip="Start" Foreground="White" Background="DarkGreen" Width="67" Margin="5" Content="Play">
+
+            </Button>
+
+
+            <Button Canvas.Left="400" x:Name="Cancel" ToolTip="Cancel"  Foreground="White" Margin="5" Background="Blue" Width="73" IsEnabled="False" Content="Cancel">
+
+            </Button>
+
+        </Canvas>
+    </StackPanel>
+</Window>
